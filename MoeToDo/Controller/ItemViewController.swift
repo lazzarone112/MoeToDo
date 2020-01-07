@@ -7,9 +7,20 @@
 //
 
 import UIKit
+import RealmSwift
+
 
 class ItemViewController: UITableViewController {
 
+    
+    var ItemsArray = List<Item>()
+    
+    var selectedCategory : Category? {
+        didSet{
+            
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

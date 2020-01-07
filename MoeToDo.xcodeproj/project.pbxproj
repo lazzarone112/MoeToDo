@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		7E34AC3DF0B3FFED4F3E233E /* Pods_MoeToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3D177310183874D9171E6E8 /* Pods_MoeToDo.framework */; };
+		964DEE2823C50A710026E9B0 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964DEE2723C50A700026E9B0 /* Category.swift */; };
+		964DEE2A23C50A7C0026E9B0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964DEE2923C50A7C0026E9B0 /* Item.swift */; };
 		96DACE9523C506360071FCDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACE9423C506360071FCDE /* AppDelegate.swift */; };
 		96DACE9723C506360071FCDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACE9623C506360071FCDE /* SceneDelegate.swift */; };
 		96DACE9923C506360071FCDE /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACE9823C506360071FCDE /* CategoryController.swift */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		747958068C98CD0D17EEE2E2 /* Pods-MoeToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoeToDo.release.xcconfig"; path = "Target Support Files/Pods-MoeToDo/Pods-MoeToDo.release.xcconfig"; sourceTree = "<group>"; };
+		964DEE2723C50A700026E9B0 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		964DEE2923C50A7C0026E9B0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		96DACE9123C506360071FCDE /* MoeToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoeToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96DACE9423C506360071FCDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96DACE9623C506360071FCDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +54,6 @@
 				D43C0E1ED20D372D5A8E11FB /* Pods-MoeToDo.debug.xcconfig */,
 				747958068C98CD0D17EEE2E2 /* Pods-MoeToDo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -115,6 +118,8 @@
 		96DACEAD23C509C80071FCDE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				964DEE2723C50A700026E9B0 /* Category.swift */,
+				964DEE2923C50A7C0026E9B0 /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -243,8 +248,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				96DACE9923C506360071FCDE /* CategoryController.swift in Sources */,
+				964DEE2823C50A710026E9B0 /* Category.swift in Sources */,
 				96DACEAC23C508040071FCDE /* ItemViewController.swift in Sources */,
 				96DACE9523C506360071FCDE /* AppDelegate.swift in Sources */,
+				964DEE2A23C50A7C0026E9B0 /* Item.swift in Sources */,
 				96DACE9723C506360071FCDE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
