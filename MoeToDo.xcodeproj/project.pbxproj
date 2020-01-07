@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E34AC3DF0B3FFED4F3E233E /* Pods_MoeToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3D177310183874D9171E6E8 /* Pods_MoeToDo.framework */; };
 		96DACE9523C506360071FCDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACE9423C506360071FCDE /* AppDelegate.swift */; };
 		96DACE9723C506360071FCDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACE9623C506360071FCDE /* SceneDelegate.swift */; };
-		96DACE9923C506360071FCDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACE9823C506360071FCDE /* ViewController.swift */; };
+		96DACE9923C506360071FCDE /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACE9823C506360071FCDE /* CategoryController.swift */; };
 		96DACE9C23C506360071FCDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96DACE9A23C506360071FCDE /* Main.storyboard */; };
 		96DACE9E23C506360071FCDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96DACE9D23C506360071FCDE /* Assets.xcassets */; };
 		96DACEA123C506370071FCDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96DACE9F23C506370071FCDE /* LaunchScreen.storyboard */; };
+		96DACEAC23C508040071FCDE /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACEAB23C508040071FCDE /* ItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		747958068C98CD0D17EEE2E2 /* Pods-MoeToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoeToDo.release.xcconfig"; path = "Target Support Files/Pods-MoeToDo/Pods-MoeToDo.release.xcconfig"; sourceTree = "<group>"; };
 		96DACE9123C506360071FCDE /* MoeToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoeToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96DACE9423C506360071FCDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96DACE9623C506360071FCDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		96DACE9823C506360071FCDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		96DACE9823C506360071FCDE /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
 		96DACE9B23C506360071FCDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96DACE9D23C506360071FCDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96DACEA023C506370071FCDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96DACEA223C506370071FCDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96DACEAB23C508040071FCDE /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		A3D177310183874D9171E6E8 /* Pods_MoeToDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoeToDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D43C0E1ED20D372D5A8E11FB /* Pods-MoeToDo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoeToDo.debug.xcconfig"; path = "Target Support Files/Pods-MoeToDo/Pods-MoeToDo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E34AC3DF0B3FFED4F3E233E /* Pods_MoeToDo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C98263054BA5C15C0A12251 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D43C0E1ED20D372D5A8E11FB /* Pods-MoeToDo.debug.xcconfig */,
+				747958068C98CD0D17EEE2E2 /* Pods-MoeToDo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		96DACE8823C506360071FCDE = {
 			isa = PBXGroup;
 			children = (
 				96DACE9323C506360071FCDE /* MoeToDo */,
 				96DACE9223C506360071FCDE /* Products */,
+				7C98263054BA5C15C0A12251 /* Pods */,
+				A9C9D5EE87BB829D12FE1ED0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +75,56 @@
 		96DACE9323C506360071FCDE /* MoeToDo */ = {
 			isa = PBXGroup;
 			children = (
-				96DACE9423C506360071FCDE /* AppDelegate.swift */,
-				96DACE9623C506360071FCDE /* SceneDelegate.swift */,
-				96DACE9823C506360071FCDE /* ViewController.swift */,
-				96DACE9A23C506360071FCDE /* Main.storyboard */,
-				96DACE9D23C506360071FCDE /* Assets.xcassets */,
+				96DACEAD23C509C80071FCDE /* Model */,
+				96DACEA823C507A60071FCDE /* Controller */,
+				96DACEA923C507C70071FCDE /* View */,
+				96DACEAA23C507DA0071FCDE /* Supporting Files */,
 				96DACE9F23C506370071FCDE /* LaunchScreen.storyboard */,
 				96DACEA223C506370071FCDE /* Info.plist */,
 			);
 			path = MoeToDo;
+			sourceTree = "<group>";
+		};
+		96DACEA823C507A60071FCDE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				96DACE9423C506360071FCDE /* AppDelegate.swift */,
+				96DACE9623C506360071FCDE /* SceneDelegate.swift */,
+				96DACE9823C506360071FCDE /* CategoryController.swift */,
+				96DACEAB23C508040071FCDE /* ItemViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		96DACEA923C507C70071FCDE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				96DACE9A23C506360071FCDE /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		96DACEAA23C507DA0071FCDE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				96DACE9D23C506360071FCDE /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96DACEAD23C509C80071FCDE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A9C9D5EE87BB829D12FE1ED0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3D177310183874D9171E6E8 /* Pods_MoeToDo.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +134,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96DACEA523C506370071FCDE /* Build configuration list for PBXNativeTarget "MoeToDo" */;
 			buildPhases = (
+				F317BF60FD55B14846536893 /* [CP] Check Pods Manifest.lock */,
 				96DACE8D23C506360071FCDE /* Sources */,
 				96DACE8E23C506360071FCDE /* Frameworks */,
 				96DACE8F23C506360071FCDE /* Resources */,
+				DACEDF2002E032422AFC81A2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,12 +195,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DACEDF2002E032422AFC81A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoeToDo/Pods-MoeToDo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoeToDo/Pods-MoeToDo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoeToDo/Pods-MoeToDo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F317BF60FD55B14846536893 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoeToDo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		96DACE8D23C506360071FCDE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96DACE9923C506360071FCDE /* ViewController.swift in Sources */,
+				96DACE9923C506360071FCDE /* CategoryController.swift in Sources */,
+				96DACEAC23C508040071FCDE /* ItemViewController.swift in Sources */,
 				96DACE9523C506360071FCDE /* AppDelegate.swift in Sources */,
 				96DACE9723C506360071FCDE /* SceneDelegate.swift in Sources */,
 			);
@@ -282,6 +387,7 @@
 		};
 		96DACEA623C506370071FCDE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D43C0E1ED20D372D5A8E11FB /* Pods-MoeToDo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +406,7 @@
 		};
 		96DACEA723C506370071FCDE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 747958068C98CD0D17EEE2E2 /* Pods-MoeToDo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
