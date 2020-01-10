@@ -97,12 +97,39 @@ class CategoryController: UITableViewController {
         tableView.reloadData()
     }
     
+    @IBOutlet weak var searchBar: UISearchBar!
     func loadCategory(){
         
         categories = realm.objects(Category.self)
         
         tableView.reloadData()
     }
-    
+
 }
 
+extension CategoryController :UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        categories = categories?.filter(NSPredicate(format: "name CONTAINS[cd] %@", searchBar.text!))
+        tableView.reloadData()
+    
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchBar.text?.count == 0 {
+            
+            loadCategory()
+            
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+    }
+        
+    }
+    
+    
+    
+    
+}
