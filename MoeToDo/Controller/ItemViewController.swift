@@ -14,11 +14,11 @@ class ItemViewController: UITableViewController {
 
     let realm = try! Realm()
     
-    var ItemsArray : Results<Item>?
+    var itemsArray : Results<Item>?
     
     var selectedCategory : Category? {
         didSet{
-            ItemsArray = self.selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
+            itemsArray = self.selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
         }
     }
     
@@ -29,15 +29,15 @@ class ItemViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return ItemsArray?.count ?? 1
+        return itemsArray?.count ?? 1
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
             
-        cell.textLabel?.text = ItemsArray?[indexPath.row].title ?? "No Item Added"
+        cell.textLabel?.text = itemsArray?[indexPath.row].title ?? "No Item Added"
             
-        if ItemsArray?[indexPath.row].done == true {
+        if itemsArray?[indexPath.row].done == true {
             
             cell.accessoryType = .checkmark
         }else{
@@ -52,7 +52,7 @@ class ItemViewController: UITableViewController {
         
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let selectedItem = ItemsArray?[indexPath.row] {
+        if let selectedItem = itemsArray?[indexPath.row] {
             do {
                 try realm.write {
                     selectedItem.done = !selectedItem.done
@@ -95,7 +95,36 @@ class ItemViewController: UITableViewController {
     }
     
 
+    @IBOutlet weak var searchBar: UISearchBar!
     
+    
+    
+}
+
+
+extension ItemViewController:UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        itemsArray = itemsArray?.filter(NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!))
+        
+        tableView.reloadData()
+        
+    }
+ 
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchBar.text?.count == 0 {
+            
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+            itemsArray = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
+            tableView.reloadData()
+            
+        }
+        
+    }
     
     
 }
