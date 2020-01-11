@@ -9,6 +9,13 @@
 import UIKit
 
 class ItemViewController: UITableViewController {
+    
+    
+    var selectedCategory:Categories? {
+        didSet{
+            
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
