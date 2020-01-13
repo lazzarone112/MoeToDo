@@ -114,6 +114,33 @@ class CategoryController: UITableViewController {
     }
     
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    
+    
     
 }
 
+extension CategoryController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        CategoryArray = CategoryArray?.filter(NSPredicate(format: "name CONTAINS[cd] %@", searchBar.text!))
+        tableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchBar.text?.count == 0 {
+            
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+                self.CategoryArray = self.realm.objects(Categories.self)
+                self.tableView.reloadData()
+            }
+        }
+        
+    }
+    
+    
+}

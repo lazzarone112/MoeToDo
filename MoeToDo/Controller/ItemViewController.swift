@@ -97,4 +97,28 @@ class ItemViewController: UITableViewController {
         
     }
     
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+}
+
+extension ItemViewController:UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        itemArray = itemArray?.filter(NSPredicate(format: "name CONTAINS[cd] %@", searchBar.text!))
+        tableView.reloadData()
+        
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+                self.itemArray = self.selectedCategory?.items.sorted(byKeyPath: "name", ascending: true)
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    
 }
