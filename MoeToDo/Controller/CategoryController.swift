@@ -8,8 +8,9 @@
 
 import UIKit
 import RealmSwift
+import SwipeCellKit
 
-class CategoryController: UITableViewController {
+class CategoryController: SwipeVcellTableViewController {
 
     var CategoryArray :Results<Categories>?
     
@@ -17,6 +18,7 @@ class CategoryController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = 70
         
         CategoryArray = realm.objects(Categories.self)
     }
@@ -32,12 +34,29 @@ class CategoryController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
+         let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        
+    
         
         cell.textLabel?.text = CategoryArray?[indexPath.row].name ?? "No Category Added yet"
     
         return cell
     }
+    
+ 
+        
+    override func updateSuperModel(at indexPath: IndexPath) {
+        do{
+            try realm.write {
+                realm.delete((CategoryArray?[indexPath.row])!)
+                
+            }
+        }catch{
+            print(error)
+        }
+    }
+        
+        
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -47,6 +66,7 @@ class CategoryController: UITableViewController {
         
         
     }
+   
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -68,7 +88,9 @@ class CategoryController: UITableViewController {
     }
     
     
+  
     
+
     
     
     
