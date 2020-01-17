@@ -10,7 +10,9 @@ import UIKit
 import RealmSwift
 import SwipeCellKit
 
-class CategoryController: SwipeVcellTableViewController {
+class CategoryController: UITableViewController,SwipeTableViewCellDelegate {
+   
+    
 
     var CategoryArray :Results<Categories>?
     
@@ -34,7 +36,7 @@ class CategoryController: SwipeVcellTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
-         let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
         
     
         
@@ -44,17 +46,25 @@ class CategoryController: SwipeVcellTableViewController {
     }
     
  
-        
-    override func updateSuperModel(at indexPath: IndexPath) {
-        do{
-            try realm.write {
-                realm.delete((CategoryArray?[indexPath.row])!)
-                
+        func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+            guard orientation == .right else { return nil }
+
+            let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+                do {
+                    try self.realm.write {
+                        self.realm.delete((self.CategoryArray?[indexPath.row])!)
+                    }
+                }catch{
+                    print(error)
+                }
             }
-        }catch{
-            print(error)
+
+            // customize the action appearance
+            deleteAction.image = UIImage(named: "delete")
+
+            return [deleteAction]
         }
-    }
+  
         
         
     

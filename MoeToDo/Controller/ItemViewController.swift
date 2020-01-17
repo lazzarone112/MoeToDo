@@ -8,8 +8,9 @@
 
 import UIKit
 import RealmSwift
+import SwipeCellKit
 
-class ItemViewController: UITableViewController {
+class ItemViewController: UITableViewController,SwipeTableViewCellDelegate {
     
     var itemArray :Results<Items>?
     
@@ -26,7 +27,8 @@ class ItemViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      
+        tableView.register(UINib(nibName: "xibViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        tableView.rowHeight = 80
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -34,17 +36,25 @@ class ItemViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! xibViewCell
         
-        cell.textLabel?.text = itemArray?[indexPath.row].name ?? "No item added.."
+        cell.delegate = self
         
-        if itemArray?[indexPath.row].done == true {
-            cell.accessoryType = .checkmark
-        }else{
-            cell.accessoryType = .none
-        }
+        cell.name.text = itemArray?[indexPath.row].name ?? "No item added.."
+        
+      
+        cell.chkBox.addTarget(self, action: #selector(checkButtonClicked(sender:)), for: .touchUpInside)
         
         return cell
+    }
+    
+    @objc func checkButtonClicked (sender :UIButton){
+        if sender.isSelected {
+            sender.isSelected = false
+        }else{
+            sender.isSelected = true
+        }
+        tableView.reloadData()
     }
     
     
@@ -62,10 +72,32 @@ class ItemViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+           
+            do {
+                try self.realm.write {
+                    self.realm.delete((self.itemArray?[indexPath.row])!)
+                }
+            }catch{
+                print(error)
+            }
+        }
+
+        // customize the action appearance
+        deleteAction.image = UIImage(named: "delete")
+
+        return [deleteAction]
+    }
     
-    
-    
-    
+   func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .destructive
+        
+        return options
+    }
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
         var intermediateItemText = UITextField()

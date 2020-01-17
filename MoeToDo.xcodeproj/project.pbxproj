@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7E34AC3DF0B3FFED4F3E233E /* Pods_MoeToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3D177310183874D9171E6E8 /* Pods_MoeToDo.framework */; };
-		964A555B23CE47F700E952DC /* SwipeVcellTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964A555A23CE47F700E952DC /* SwipeVcellTableViewController.swift */; };
+		962A4B9F23D1D79A00CFB067 /* xibViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962A4B9D23D1D79A00CFB067 /* xibViewCell.swift */; };
+		962A4BA023D1D79A00CFB067 /* xibViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 962A4B9E23D1D79A00CFB067 /* xibViewCell.xib */; };
 		96998C6C23CA358F00D59414 /* Categeories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96998C6B23CA358F00D59414 /* Categeories.swift */; };
 		96998C6E23CA35A100D59414 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96998C6D23CA35A100D59414 /* Items.swift */; };
 		96DACE9523C506360071FCDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACE9423C506360071FCDE /* AppDelegate.swift */; };
@@ -22,7 +23,8 @@
 
 /* Begin PBXFileReference section */
 		747958068C98CD0D17EEE2E2 /* Pods-MoeToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoeToDo.release.xcconfig"; path = "Target Support Files/Pods-MoeToDo/Pods-MoeToDo.release.xcconfig"; sourceTree = "<group>"; };
-		964A555A23CE47F700E952DC /* SwipeVcellTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeVcellTableViewController.swift; sourceTree = "<group>"; };
+		962A4B9D23D1D79A00CFB067 /* xibViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xibViewCell.swift; sourceTree = "<group>"; };
+		962A4B9E23D1D79A00CFB067 /* xibViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = xibViewCell.xib; sourceTree = "<group>"; };
 		96998C6B23CA358F00D59414 /* Categeories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categeories.swift; sourceTree = "<group>"; };
 		96998C6D23CA35A100D59414 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		96DACE9123C506360071FCDE /* MoeToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoeToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +59,15 @@
 				747958068C98CD0D17EEE2E2 /* Pods-MoeToDo.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		962A4BA123D1D7A200CFB067 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				962A4B9D23D1D79A00CFB067 /* xibViewCell.swift */,
+				962A4B9E23D1D79A00CFB067 /* xibViewCell.xib */,
+			);
+			path = xib;
 			sourceTree = "<group>";
 		};
 		96DACE8823C506360071FCDE = {
@@ -97,7 +108,7 @@
 				96DACE9623C506360071FCDE /* SceneDelegate.swift */,
 				96DACE9823C506360071FCDE /* CategoryController.swift */,
 				96DACEAB23C508040071FCDE /* ItemViewController.swift */,
-				964A555A23CE47F700E952DC /* SwipeVcellTableViewController.swift */,
+				962A4BA123D1D7A200CFB067 /* xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -197,6 +208,7 @@
 			files = (
 				96DACEA123C506370071FCDE /* LaunchScreen.storyboard in Resources */,
 				96DACE9E23C506360071FCDE /* Assets.xcassets in Resources */,
+				962A4BA023D1D79A00CFB067 /* xibViewCell.xib in Resources */,
 				96DACE9C23C506360071FCDE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,7 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96DACE9923C506360071FCDE /* CategoryController.swift in Sources */,
-				964A555B23CE47F700E952DC /* SwipeVcellTableViewController.swift in Sources */,
+				962A4B9F23D1D79A00CFB067 /* xibViewCell.swift in Sources */,
 				96DACEAC23C508040071FCDE /* ItemViewController.swift in Sources */,
 				96998C6C23CA358F00D59414 /* Categeories.swift in Sources */,
 				96DACE9523C506360071FCDE /* AppDelegate.swift in Sources */,
